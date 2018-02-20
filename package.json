@@ -1,0 +1,36 @@
+{
+  "name": "news-app-react",
+  "version": "0.0.1",
+  "description": "News Feed using NewsAPI.org API",
+  "main": "src/Index.js",
+  "keywords": [
+    "News"
+  ],
+  "author": "Prasanta Saha",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "bulma": "^0.6.2",
+    "moment": "^2.20.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-scripts": "^1.1.1",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "node-sass-chokidar": "^0.0.3",
+    "gh-pages": "^1.1.0"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
