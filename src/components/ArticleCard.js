@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 class ArticleCard extends React.Component {
   render() {
@@ -36,4 +37,7 @@ class ArticleCard extends React.Component {
   }
 }
 
+ArticleCard.propTypes = {
+    data: PropTypes.object.isRequired
+}
 export default ArticleCard;

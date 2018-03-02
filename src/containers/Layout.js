@@ -5,7 +5,7 @@ import Articles from "../components/Articles";
 class Layout extends React.Component {
   render() {
     return <div>
-        {/* <Navigation /> */}
+        <Navigation />
         <Articles />
     </div>;
   }

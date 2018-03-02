@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from 'prop-types';
 
 import { getTopHeadlines } from "../state/NewsData";
 import ArticleCard from "./ArticleCard";
@@ -18,13 +19,16 @@ class Articles extends React.Component {
             return <ArticleCard key={index} data={item} />;
           })
         ) : (
-          <div className="progress-container">
-            "Loading"
-          </div>
+          <div className="progress-container">Loading</div>
         )}
       </div>
     );
   }
+}
+
+Articles.propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    NewsData: PropTypes.object.isRequired
 }
 
 export default connect(state => state)(Articles);
