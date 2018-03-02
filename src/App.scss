@@ -1,6 +1,7 @@
 // 1. Import the initial variables
-@import "../node_modules/bulma/sass/utilities/initial-variables";
-@import "../node_modules/bulma/sass/utilities/functions";
+@import "bulma/sass/utilities/initial-variables";
+@import "bulma/sass/utilities/functions";
+//@import '@fontawesome/fontawesome/styles.scss'; 
 
 // 2. Set your own initial variables
 // Update blue
@@ -13,7 +14,7 @@ $family-serif: "Merriweather", "Georgia", serif;
 
 // 3. Set the derived variables
 // Use the new pink as the primary color
-$primary: $pink;
+$primary: $blue;
 $primary-invert: $pink-invert;
 // Use the existing orange as the danger color
 $danger: $orange;
@@ -29,7 +30,7 @@ $github: #333;
 $github-invert: findColorInvert($github);
 
 // 5. Add new color variables to the color map.
-@import "../node_modules/bulma/sass/utilities/derived-variables.sass";
+@import "bulma/sass/utilities/derived-variables.sass";
 $addColors: (
   "twitter":($twitter, $twitter-invert),
   "linkedin": ($linkedin, $linkedin-invert),
@@ -38,4 +39,6 @@ $addColors: (
 $colors: map-merge($colors, $addColors);
 
 // 6. Import the rest of Bulma
-@import "../node_modules/bulma/bulma.sass";
+@import "bulma/bulma.sass";
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat&.scss);
