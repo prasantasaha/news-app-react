@@ -12,20 +12,40 @@ class SideBar extends React.Component {
     );
   }
   render() {
-    let classes =
+    let sideBarClasses =
       "menu sidebar " +
       (this.props.NewsData.get("sideBarExpanded") ? "sidebar-expanded" : "");
+
     return (
-      <aside className={classes}>
+      <aside className={sideBarClasses}>
+        <p className="menu-label">Bookmarks</p>
+        <hr className="dropdown-divider" />
         <ul className="menu-list">
+          <p className="menu-label">Sections</p>
           <li>
-            <a onClick={this.updateCategory.bind(this, null)}>Top Headlined</a>
+            <a
+              onClick={this.updateCategory.bind(this, null)}
+              className={
+                !this.props.NewsData.get("selectedCategory") ? "is-active" : ""
+              }
+            >
+              Top Headlines
+            </a>
           </li>
           {this.props.NewsData.get("categories").map(category => {
             return (
-              <li key={category}>
-                <a onClick={this.updateCategory.bind(this, category)}>
-                  {category}
+              <li key={category.name}>
+                <a
+                  onClick={this.updateCategory.bind(this, category)}
+                  className={
+                    this.props.NewsData.get("selectedCategory") &&
+                    this.props.NewsData.get("selectedCategory").name ===
+                      category.name
+                      ? "is-active"
+                      : ""
+                  }
+                >
+                  {category.displayName}
                 </a>
               </li>
             );

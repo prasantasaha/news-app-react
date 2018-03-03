@@ -6,13 +6,34 @@ const newsapi = new NewsAPI("0c9f7b4f133c473baee1c231e2af9845");
 const INITIAL_STATE = fromJS({
   sideBarExpanded: false,
   categories: List([
-    "Business",
-    "Entertainment",
-    "General",
-    "Gealth",
-    "Science",
-    "Sports",
-    "Technology"
+    {
+      name: "business",
+      displayName: "Business"
+    },
+    {
+      name: "entertainment",
+      displayName: "Entertainment"
+    },
+    {
+      name: "general",
+      displayName: "General"
+    },
+    {
+      name: "health",
+      displayName: "Health"
+    },
+    {
+      name: "science",
+      displayName: "Science"
+    },
+    {
+      name: "sports",
+      displayName: "Sports"
+    },
+    {
+      name: "technology",
+      displayName: "Technology"
+    }
   ]),
   selectedCategory: "sports",
   sources: List([]),
@@ -43,7 +64,7 @@ export function toggleSideBar(flag) {
 export function updateCategory(category) {
   return dispatch => {
     dispatch(
-      setNewsData("selectedCategory", category ? category.toLowerCase() : null)
+      setNewsData("selectedCategory", category)
     );
   };
 }
@@ -64,8 +85,8 @@ export function getTopHeadlines() {
       language: "en",
       country: "us"
     };
-    if (category) {
-      options.category = category;
+    if (category && category.name) {
+      options.category = category.name;
     }
     newsapi.v2.topHeadlines(options).then(result => {
       dispatch(setNewsData("articles", List(result.articles)));

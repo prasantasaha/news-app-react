@@ -41,7 +41,7 @@ $colors: map-merge($colors, $addColors);
 // 6. Import the rest of Bulma
 @import "bulma/bulma.sass";
 
-@import url(https://fonts.googleapis.com/css?family=Montserrat&.scss);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab&.scss);
 
 html, 
 body {
@@ -49,7 +49,7 @@ body {
 }
 
 body, input, textarea {
-  font-family: 'Montserrat', serif;
+  font-family: 'Roboto Slab', serif;
   font-size: 14px;
 }
 

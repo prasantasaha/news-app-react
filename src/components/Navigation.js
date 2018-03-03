@@ -20,7 +20,7 @@ class Navigation extends React.Component {
       >
         <div className="navbar-brand">
           <a className="navbar-item">
-            <img src={logo} />
+            <img src={logo} alt=""/>
           </a>
 
           <div
@@ -31,6 +31,11 @@ class Navigation extends React.Component {
             <span />
             <span />
           </div>
+        </div>
+        <div className="navbar-item category-title is-size-4">
+          {this.props.NewsData.get("selectedCategory")
+            ? this.props.NewsData.get("selectedCategory").displayName
+            : "Top Headlines"}
         </div>
 
         <div className="navbar-menu">

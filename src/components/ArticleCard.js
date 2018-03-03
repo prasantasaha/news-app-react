@@ -8,30 +8,44 @@ class ArticleCard extends React.Component {
     let source = this.props.source;
     return (
       <div className="card article">
-        <div className="card-image">
-          <figure className="image is-16by9">
-            <img src={article.urlToImage} />
-          </figure>
-        </div>
+        {article.urlToImage ? (
+          <div className="card-image">
+            <figure className="image is-16by9">
+              <img src={article.urlToImage} alt="" />
+            </figure>
+          </div>
+        ) : (
+          ""
+        )}
+
         <div className="card-content">
           <div className="media">
-            <div className="media-left">
-              <figure className="image is-48x48">
-                {source && source.url ? (
-                  <a href={source.url}>
+            {source && source.url ? (
+              <div className="media-left">
+                <figure className="image is-48x48">
+                  <a
+                    href={source.url}
+                    title={source.description || ""}
+                    target="_blank"
+                  >
                     <img
                       src={`https://logo.clearbit.com/${
                         new URL(source.url).host
                       }`}
+                      alt={source.name}
                     />
                   </a>
-                ) : (
-                  ""
-                )}
-              </figure>
-            </div>
+                </figure>
+              </div>
+            ) : (
+              ""
+            )}
             <div className="media-content">
-              <p className="title is-5">{article.title}</p>
+              <p className="title is-3">
+                <a href={article.url} target="_blank">
+                  {article.title}
+                </a>
+              </p>
               <p className="subtitle is-6">{article.author || ""}</p>
             </div>
           </div>

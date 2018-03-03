@@ -1,5 +1,5 @@
 /*! bulma.io v0.6.2 | MIT License | github.com/jgthms/bulma */
-@import url(https://fonts.googleapis.com/css?family=Montserrat&.scss);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab&.scss);
 @keyframes spinAround {
   from {
     transform: rotate(0deg); }
@@ -7122,7 +7122,7 @@ body {
   height: 100%; }
 
 body, input, textarea {
-  font-family: 'Montserrat', serif;
+  font-family: 'Roboto Slab', serif;
   font-size: 14px; }
 
 body {

@@ -18,6 +18,7 @@ class Articles extends React.Component {
       newProps.NewsData.get("selectedCategory") !==
       this.props.NewsData.get("selectedCategory")
     ) {
+      window.scrollTo(0, 0);
       this.props.dispatch(getTopHeadlines());
     }
   }
