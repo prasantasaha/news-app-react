@@ -1,8 +1,78 @@
 .articles-container {
   display: flex;
   flex-flow: row wrap; }
+  .articles-container .progress-container {
+    display: block;
+    width: 100%;
+    min-height: 100%; }
+  .articles-container .is-loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 1; }
+    .articles-container .is-loading:after {
+      animation: spinAround 500ms infinite linear;
+      border: 2px solid #dbdbdb;
+      border-radius: 290486px;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      content: "";
+      display: block;
+      height: 1em;
+      position: relative;
+      width: 1em;
+      position: absolute;
+      top: 120px;
+      left: calc(50% - 2.5em);
+      width: 5em;
+      height: 5em;
+      border-width: 0.25em; }
+
+.main-container::before {
+  content: "";
+  display: block;
+  height: 52px; }
+
+.main-container .search-article {
+  display: none; }
+
+.navbar-burger {
+  display: block; }
 
 .article {
   flex: 0 1 25%; }
   .article .media-content {
     overflow: unset; }
+
+.sidebar {
+  width: 300px;
+  background-color: white;
+  position: fixed;
+  top: 45px;
+  left: -400px;
+  z-index: 50;
+  padding: 10px;
+  overflow-x: hidden;
+  transition: 0.5s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  .sidebar-expanded {
+    left: 0; }
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 420px) {
+  .article {
+    flex-basis: 100%; } }
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 700px) {
+  .article {
+    flex-basis: 50%; } }
+
+/* Tablets ----------- */
+@media only screen and (min-width: 1024px) {
+  .article {
+    flex-basis: 33.33%; } }
+
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+  .article {
+    flex-basis: 20%; } }

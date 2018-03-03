@@ -7116,3 +7116,23 @@ label.panel-block {
 .footer {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
+
+html,
+body {
+  height: 100%; }
+
+body, input, textarea {
+  font-family: 'Montserrat', serif;
+  font-size: 14px; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #1390C4;
+  color: #fff;
+  min-height: 100%; }
+
+nav::after {
+  content: "";
+  clear: both;
+  display: block; }
