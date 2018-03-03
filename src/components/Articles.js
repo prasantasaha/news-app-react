@@ -2,15 +2,14 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import { getTopHeadlines, getSources, updateCategory } from "../state/NewsData";
+import { initializeData, getTopHeadlines } from "../state/NewsData";
 import ArticleCard from "./ArticleCard";
 
 import "./Articles.css";
 
 class Articles extends React.Component {
   componentDidMount() {
-    this.props.dispatch(getSources());
-    this.props.dispatch(updateCategory(null));
+    this.props.dispatch(initializeData());
   }
 
   componentWillReceiveProps(newProps) {
@@ -25,7 +24,8 @@ class Articles extends React.Component {
   render() {
     return (
       <div className="articles-container">
-        {this.props.NewsData.get("articles").size ? (
+        {!this.props.NewsData.get("isLoading") &&
+        this.props.NewsData.get("articles").size ? (
           this.props.NewsData.get("articles").map((article, index) => {
             return (
               <ArticleCard
@@ -34,14 +34,15 @@ class Articles extends React.Component {
                 source={this.props.NewsData.get("sources").find(
                   source =>
                     article.source.id
-                      ? source.id === article.source.id.split("-").join("")
+                      ? source.id === article.source.id.split("-").join("") ||
+                        source.name === article.source.name
                       : false
                 )}
               />
             );
           })
         ) : (
-          <div className="progress-container is-loading">1</div>
+          <div className="progress-container is-loading" />
         )}
       </div>
     );

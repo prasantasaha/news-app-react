@@ -5,11 +5,14 @@ import { connect } from "react-redux";
 import { toggleSideBar } from "../state/NewsData";
 
 import logo from "../logo.png";
+import SearchArticles from "./SearchArticles";
 
 class Navigation extends React.Component {
   toggleSideBar() {
+      let sideBarExpanded = this.props.NewsData.get("sideBarExpanded")
     this.props.dispatch(
-      toggleSideBar(!this.props.NewsData.get("sideBarExpanded"))
+      toggleSideBar(!sideBarExpanded)
+      
     );
   }
   render() {
@@ -20,7 +23,7 @@ class Navigation extends React.Component {
       >
         <div className="navbar-brand">
           <a className="navbar-item">
-            <img src={logo} alt=""/>
+            <img src={logo} alt="" />
           </a>
 
           <div
@@ -40,14 +43,7 @@ class Navigation extends React.Component {
 
         <div className="navbar-menu">
           <div className="navbar-end">
-            <div className="navbar-item field search-article">
-              <p className="control has-icons-left">
-                <input className="input" type="text" placeholder="Search" />
-                <span className="icon is-small is-left">
-                  <i className="fas fa-search" />
-                </span>
-              </p>
-            </div>
+            <SearchArticles className="navbar-item field search-article" />
           </div>
         </div>
       </nav>

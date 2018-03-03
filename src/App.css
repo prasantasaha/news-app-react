@@ -7121,7 +7121,9 @@ html,
 body {
   height: 100%; }
 
-body, input, textarea {
+body,
+input,
+textarea {
   font-family: 'Roboto Slab', serif;
   font-size: 14px; }
 
@@ -7136,3 +7138,6 @@ nav::after {
   content: "";
   clear: both;
   display: block; }
+
+.noscroll {
+  overflow: hidden; }

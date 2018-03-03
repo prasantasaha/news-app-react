@@ -18,7 +18,12 @@ class SideBar extends React.Component {
 
     return (
       <aside className={sideBarClasses}>
-        <p className="menu-label">Bookmarks</p>
+        <p className="menu-label">
+          powered by{" "}
+          <a href="//newsapi.org" target="_blank" rel="noopener noreferrer">
+            NewsAPI.org
+          </a>
+        </p>
         <hr className="dropdown-divider" />
         <ul className="menu-list">
           <p className="menu-label">Sections</p>
@@ -51,6 +56,7 @@ class SideBar extends React.Component {
             );
           })}
         </ul>
+       
       </aside>
     );
   }

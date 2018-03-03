@@ -54,9 +54,19 @@ nav {
       color: black; }
     .article .title a:hover {
       background-color: cornsilk; }
+  .article .card-footer {
+    display: flex;
+    flex-direction: row; }
+    .article .card-footer .source-info {
+      display: flex;
+      flex-direction: row;
+      flex: 1; }
+    .article .card-footer .info-label {
+      margin-left: 6px;
+      align-self: flex-end; }
 
 .sidebar {
-  width: 300px;
+  width: 245px;
   background-color: white;
   position: fixed;
   top: 45px;
@@ -65,6 +75,7 @@ nav {
   z-index: 50;
   padding: 10px;
   overflow-x: hidden;
+  overflow-y: scroll;
   transition: 0.5s;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
   .sidebar-expanded {
@@ -81,12 +92,16 @@ nav {
   .category-title {
     display: none; } }
 
-/* Smartphones (landscape) ----------- */
-@media only screen and (min-width: 700px) {
+/* Smartphones (landscape)  and  Tablets (portrait) ----------- */
+@media only screen and (min-width: 560px) and (max-width: 1000px) {
   .article {
-    flex-basis: 50%; } }
+    flex-basis: 50%; }
+  .category-title {
+    display: none; }
+  .sidebar {
+    top: 6px; } }
 
-/* Tablets ----------- */
+/* Tablets (landscape) ----------- */
 @media only screen and (min-width: 1024px) {
   .article {
     flex-basis: 33.33%; } }

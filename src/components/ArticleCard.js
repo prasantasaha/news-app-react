@@ -20,29 +20,9 @@ class ArticleCard extends React.Component {
 
         <div className="card-content">
           <div className="media">
-            {source && source.url ? (
-              <div className="media-left">
-                <figure className="image is-48x48">
-                  <a
-                    href={source.url}
-                    title={source.description || ""}
-                    target="_blank"
-                  >
-                    <img
-                      src={`https://logo.clearbit.com/${
-                        new URL(source.url).host
-                      }`}
-                      alt={source.name}
-                    />
-                  </a>
-                </figure>
-              </div>
-            ) : (
-              ""
-            )}
             <div className="media-content">
               <p className="title is-3">
-                <a href={article.url} target="_blank">
+                <a href={article.url} target="_blank" rel="noopener noreferrer">
                   {article.title}
                 </a>
               </p>
@@ -52,7 +32,31 @@ class ArticleCard extends React.Component {
 
           <div className="content">{article.description}</div>
           <div className="card-footer">
-            <span>{moment(article.publishedAt).fromNow()}</span>
+            {source ? (
+              <div className="source-info">
+                <a
+                  href={source.url}
+                  title={source.description || ""}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <figure className="image is-24x24">
+                    <img
+                      src={`//logo.clearbit.com/${
+                        new URL(source.url).host
+                      }?size=24`}
+                      alt={source.name}
+                    />
+                  </figure>
+                </a>
+                <span className="info-label">{source.name}</span>
+              </div>
+            ) : (
+              <div className="source-info" />
+            )}
+            <div className="info-label">
+              {moment(article.publishedAt).fromNow()}
+            </div>
           </div>
         </div>
       </div>
