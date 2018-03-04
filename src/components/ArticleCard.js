@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
 
+import './ArticleCard.css';
+
 class ArticleCard extends React.Component {
   render() {
     let article = this.props.article;

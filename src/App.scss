@@ -33,33 +33,3 @@ $addColors: ( "twitter":($twitter, $twitter-invert), "linkedin": ($linkedin, $li
 $colors: map-merge($colors, $addColors);
 // 6. Import the rest of Bulma
 @import "bulma/bulma.sass";
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab&.scss);
-html,
-body {
-    height: 100%;
-}
-
-body,
-input,
-textarea {
-    font-family: 'Roboto Slab', serif;
-    font-size: 14px;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background: #1390C4;
-    color: #fff;
-    min-height: 100%;
-}
-
-nav::after {
-    content: "";
-    clear: both;
-    display: block;
-}
-
-.noscroll {
-    overflow: hidden;
-}

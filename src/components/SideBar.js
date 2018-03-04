@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 
 import { updateCategory, toggleSideBar } from "../state/NewsData";
 
+import "./SideBar.css";
+
 class SideBar extends React.Component {
   updateCategory(category) {
     this.props.dispatch(updateCategory(category));

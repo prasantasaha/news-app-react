@@ -25,88 +25,9 @@
     }
 }
 
-.main-container {
-    &::before {
-        content: "";
-        display: block;
-        height: 52px;
-    }
-    .search-article {
-        display: none;
-    }
-}
-
-nav {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    .category-title {
-        color: white;
-    }
-    .navbar-burger {
-        display: block; // margin-left: 0;
-    }
-}
-
-.article {
-    flex: 0 1 25%;
-    .media-content {
-        overflow: unset;
-    }
-    .title {
-        padding-bottom: 10px;
-        a {
-            font-weight: 400;
-            font-style: normal;
-            color: black;
-        }
-        a:hover {
-            background-color: cornsilk;
-        }
-    }
-    .card-footer {
-        display: flex;
-        flex-direction: row;
-        .source-info {
-            display: flex;
-            flex-direction: row;
-            flex: 1;
-        }
-        .info-label {
-            margin-left: 6px;
-            align-self: flex-end;
-        }
-    }
-}
-
-.sidebar {
-    width: 245px;
-    background-color: white;
-    position: fixed;
-    top: 45px;
-    height: 100%;
-    left: -400px;
-    z-index: 50;
-    padding: 10px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    transition: 0.5s;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    &-expanded {
-        left: 0;
-    }
-    .menu-list {
-        a {
-            border-radius: 0;
-            &.is-active {
-                color: white;
-            }
-        }
-    }
-}
-
-
 /* Smartphones (portrait) ----------- */
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 480px) {
     .article {
         flex-basis: 100%;
     }
@@ -118,16 +39,12 @@ nav {
 
 /* Smartphones (landscape)  and  Tablets (portrait) ----------- */
 
-@media only screen and (min-width: 560px) and (max-width: 1000px) {
+@media only screen and (min-width: 520px) and (max-width: 1000px) {
     .article {
         flex-basis: 50%;
     }
     .category-title {
         display: none;
-    }
-
-    .sidebar {
-        top: 6px;
     }
 }
 
