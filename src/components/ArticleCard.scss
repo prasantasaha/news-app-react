@@ -1,0 +1,30 @@
+.article {
+    flex: 0 1 25%;
+    .media-content {
+        overflow: unset;
+    }
+    .title {
+        padding-bottom: 10px;
+        a {
+            font-weight: 400;
+            font-style: normal;
+            color: black;
+        }
+        a:hover {
+            background-color: cornsilk;
+        }
+    }
+    .card-footer {
+        display: flex;
+        flex-direction: row;
+        .source-info {
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+        }
+        .info-label {
+            margin-left: 6px;
+            align-self: flex-end;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+
+.main-container {
+    &::before {
+        content: "";
+        display: block;
+        height: 52px;
+    }
+    .search-article {
+        display: none;
+    }
+}
+
+nav {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    .category-title {
+        color: white;
+    }
+    .navbar-burger {
+        display: block; // margin-left: 0;
+    }
+}

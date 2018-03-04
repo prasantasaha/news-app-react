@@ -1,0 +1,24 @@
+  @import url(https://fonts.googleapis.com/css?family=Roboto+Slab&.scss);
+  html,
+  body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+  }
+
+  body,
+  input,
+  textarea {
+      font-family: 'Roboto Slab', serif;
+      font-size: 14px;
+  }
+
+  body {
+      background: #1390C4;
+      color: #fff;
+      min-height: 100%;
+  }
+
+  .noscroll {
+      overflow: hidden;
+  }
