@@ -3,15 +3,17 @@
   "version": "0.0.1",
   "description": "News Feed using NewsAPI.org API",
   "main": "src/Index.js",
-  "homepage": "https://prasantasaha.github.io/news-app-react/",
   "keywords": [
-    "News"
+    "News",
+    "NewsAPI.org",
+    "PWA"
   ],
   "author": "Prasanta Saha",
   "license": "ISC",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.4",
+    "@fortawesome/fontawesome-free-solid": "^5.0.8",
     "bulma": "^0.6.2",
     "immutable": "^3.8.2",
     "moment": "^2.20.1",
@@ -19,8 +21,10 @@
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-fontawesome": "^1.6.1",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.1",
+    "react-swipe-events": "^1.0.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
   },
@@ -30,13 +34,12 @@
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "gh-pages": "^1.1.0",
     "node-sass-chokidar": "^0.0.3",
     "node-sass-import": "^1.1.1"
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "firebase deploy",
     "build-css": "node-sass-chokidar src/ -o src/ --importer node_modules/node-sass-import",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive --importer node_modules/node-sass-import",
     "start": "react-scripts start",

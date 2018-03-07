@@ -1,0 +1,45 @@
+nav {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  nav .category-title {
+    color: white; }
+  nav .navbar-burger {
+    display: block; }
+  nav .navbar-item,
+  nav .navbar-link {
+    padding: 0; }
+  nav #nav-toggle {
+    transform: translate(-70%, -40%);
+    position: absolute;
+    left: 50%;
+    top: 50%; }
+  nav #nav-toggle {
+    cursor: pointer;
+    padding: 10px 35px 16px 0px; }
+  nav #nav-toggle span,
+  nav #nav-toggle span:before,
+  nav #nav-toggle span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 3px;
+    width: 30px;
+    background: white;
+    position: absolute;
+    display: block;
+    content: ''; }
+  nav #nav-toggle span:before {
+    top: -10px; }
+  nav #nav-toggle span:after {
+    bottom: -10px; }
+  nav #nav-toggle span,
+  nav #nav-toggle span:before,
+  nav #nav-toggle span:after {
+    transition: all 500ms ease-in-out; }
+  nav #nav-toggle.active span {
+    background-color: transparent; }
+  nav #nav-toggle.active span:before,
+  nav #nav-toggle.active span:after {
+    top: 0; }
+  nav #nav-toggle.active span:before {
+    transform: rotate(45deg); }
+  nav #nav-toggle.active span:after {
+    transform: rotate(-45deg); }

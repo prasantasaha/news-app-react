@@ -2,18 +2,40 @@ import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
 
-import './ArticleCard.css';
+import "./ArticleCard.css";
+import image_placeholder from "../images/image_placeholder.png";
 
 class ArticleCard extends React.Component {
+  getImageUrlObject(urlToImage) {
+    let imageUrl;
+    if (urlToImage) {
+      imageUrl = new URL(urlToImage);
+
+      imageUrl.search += `${
+        imageUrl.search ? "&" : "&"
+      }aspect=16:9&format=auto&width=600&bgcolor=54524d`;
+    }
+    return imageUrl;
+  }
   render() {
     let article = this.props.article;
     let source = this.props.source;
+    let imageUrl = this.getImageUrlObject(article.urlToImage);
     return (
       <div className="card article">
         {article.urlToImage ? (
           <div className="card-image">
             <figure className="image is-16by9">
-              <img src={article.urlToImage} alt="" />
+              <object
+                data={`,//rsz.io/${imageUrl.hostname}${imageUrl.pathname}${
+                  imageUrl.search
+                }`}
+                type="image/png"
+              >
+                <object data={article.urlToImage} type="image/png">
+                  <img src={image_placeholder} alt="" />
+                </object>
+              </object>
             </figure>
           </div>
         ) : (
@@ -46,7 +68,7 @@ class ArticleCard extends React.Component {
                     <img
                       src={`//logo.clearbit.com/${
                         new URL(source.url).host
-                      }?size=24`}
+                      }?size=48`}
                       alt={source.name}
                     />
                   </figure>

@@ -2,6 +2,15 @@
   flex: 0 1 25%; }
   .article .media-content {
     overflow: unset; }
+  .article figure {
+    overflow: hidden; }
+  .article object {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%; }
   .article .title {
     padding-bottom: 10px; }
     .article .title a {
@@ -12,6 +21,7 @@
       background-color: cornsilk; }
   .article .card-footer {
     display: flex;
+    border: none;
     flex-direction: row; }
     .article .card-footer .source-info {
       display: flex;

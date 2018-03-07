@@ -3,6 +3,17 @@
     .media-content {
         overflow: unset;
     }
+    figure {
+        overflow: hidden;
+    }
+    object {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+    }
     .title {
         padding-bottom: 10px;
         a {
@@ -16,6 +27,7 @@
     }
     .card-footer {
         display: flex;
+        border: none;
         flex-direction: row;
         .source-info {
             display: flex;

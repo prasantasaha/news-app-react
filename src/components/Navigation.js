@@ -4,18 +4,20 @@ import { connect } from "react-redux";
 
 import { toggleSideBar } from "../state/NewsData";
 
-import logo from "../logo.png";
+import logo from "../images/logo.png";
 import SearchArticles from "./SearchArticles";
+
+import "./Navigation.css";
 
 class Navigation extends React.Component {
   toggleSideBar() {
-      let sideBarExpanded = this.props.NewsData.get("sideBarExpanded")
-    this.props.dispatch(
-      toggleSideBar(!sideBarExpanded)
-      
-    );
+    let sideBarExpanded = this.props.NewsData.get("sideBarExpanded");
+    this.props.dispatch(toggleSideBar(!sideBarExpanded));
   }
   render() {
+    let navToggleClass = this.props.NewsData.get("sideBarExpanded")
+      ? "active"
+      : "";
     return (
       <nav
         className="navbar is-fixed-top is-primary"
@@ -25,14 +27,13 @@ class Navigation extends React.Component {
           <a className="navbar-item">
             <img src={logo} alt="" />
           </a>
-
           <div
             className="navbar-burger"
             onClick={this.toggleSideBar.bind(this)}
           >
-            <span />
-            <span />
-            <span />
+            <a id="nav-toggle" className={navToggleClass}>
+              <span />
+            </a>
           </div>
         </div>
         <div className="navbar-item category-title is-size-4">

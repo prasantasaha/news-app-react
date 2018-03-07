@@ -5,10 +5,3 @@
 
 .main-container .search-article {
   display: none; }
-
-nav {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
-  nav .category-title {
-    color: white; }
-  nav .navbar-burger {
-    display: block; }
