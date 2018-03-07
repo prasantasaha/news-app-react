@@ -26,7 +26,6 @@ class Layout extends React.Component {
   }
 
   handleClickOutside(event) {
-    console.log(event);
     let sideBarExpanded = this.props.NewsData.get("sideBarExpanded");
     if (
       sideBarExpanded &&
@@ -36,7 +35,7 @@ class Layout extends React.Component {
       this.props.dispatch(toggleSideBar(false));
     }
   }
-  
+
   setSideBarWrapperRef(node) {
     this.SideBarWrapperRef = node;
   }

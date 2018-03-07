@@ -27,7 +27,7 @@ class ArticleCard extends React.Component {
           <div className="card-image">
             <figure className="image is-16by9">
               <object
-                data={`,//rsz.io/${imageUrl.hostname}${imageUrl.pathname}${
+                data={`//rsz.io/${imageUrl.hostname}${imageUrl.pathname}${
                   imageUrl.search
                 }`}
                 type="image/png"
