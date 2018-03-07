@@ -1,5 +1,5 @@
 {
-  "short_name": "News App",
+  "short_name": "News App α",
   "name": "Get live top headlines and search all articles",
   "icons": [
     {
@@ -42,5 +42,6 @@
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#72d0eb",
-  "background_color": "#1390C4"
+  "background_color": "#1390C4",
+  "scope": "/"
 }
