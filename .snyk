@@ -60,3 +60,18 @@ patch:
         patched: '2019-07-03T22:05:21.356Z'
     - react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-transform-async-to-generator > @babel/helper-remap-async-to-generator > @babel/helper-wrap-function > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
         patched: '2019-07-03T22:05:21.356Z'
+    - snyk > lodash:
+        patched: '2019-11-20T14:26:55.501Z'
+    - snyk > snyk-nuget-plugin > lodash:
+        patched: '2019-11-20T14:26:55.501Z'
+    - snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2019-11-20T14:26:55.501Z'
+    - snyk > snyk-config > lodash:
+        patched: '2019-11-20T14:26:55.501Z'
+    - snyk > inquirer > lodash:
+        patched: '2019-11-20T14:26:55.501Z'
+  SNYK-JS-HTTPSPROXYAGENT-469131:
+    - snyk > proxy-agent > https-proxy-agent:
+        patched: '2019-11-20T14:26:55.501Z'
+    - snyk > proxy-agent > pac-proxy-agent > https-proxy-agent:
+        patched: '2019-11-20T14:26:55.501Z'
