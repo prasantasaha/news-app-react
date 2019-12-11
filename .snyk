@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.13.5
+version: v1.14.0
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -903,3 +903,6 @@ patch:
         patched: '2019-11-20T14:26:55.501Z'
     - snyk > proxy-agent > pac-proxy-agent > https-proxy-agent:
         patched: '2019-11-20T14:26:55.501Z'
+  SNYK-JS-TREEKILL-536781:
+    - snyk > snyk-sbt-plugin > tree-kill:
+        patched: '2019-12-11T22:07:44.978Z'
