@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 class LanguageSelector extends React.Component {
   render() {
@@ -9,13 +9,11 @@ class LanguageSelector extends React.Component {
         <div className="navbar-item has-dropdown is-hoverable">
           <a className="navbar-link">Choose Language</a>
           <div className="navbar-dropdown is-boxed">
-            {this.props.NewsData.get("languages").map((lang, index) => {
-              return (
-                <a className="navbar-item" key={index}>
-                  {lang.displayName}
-                </a>
-              );
-            })}
+            {this.props.NewsData.get('languages').map((lang, index) => (
+              <a className="navbar-item" key={index}>
+                {lang.displayName}
+              </a>
+            ))}
           </div>
         </div>
       </div>
@@ -25,7 +23,7 @@ class LanguageSelector extends React.Component {
 
 LanguageSelector.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  NewsData: PropTypes.object.isRequired
+  NewsData: PropTypes.object.isRequired,
 };
 
 export default connect(state => state)(LanguageSelector);

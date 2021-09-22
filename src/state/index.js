@@ -1,6 +1,6 @@
-import { combineReducers } from "redux";
-import NewsData from "./NewsData";
+import { combineReducers } from 'redux';
+import NewsData from './NewsData';
 
 export default combineReducers({
-  NewsData
+  NewsData,
 });

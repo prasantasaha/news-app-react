@@ -1,14 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import { toggleSideBar } from "../state/NewsData";
-import ReactSwipeEvents from "../components/ReactSwipeEvents";
-import Navigation from "../components/Navigation";
-import Articles from "../components/Articles";
-import SideBar from "../components/SideBar";
+import { toggleSideBar } from '../state/NewsData';
+import ReactSwipeEvents from '../components/ReactSwipeEvents';
+import Navigation from '../components/Navigation';
+import Articles from '../components/Articles';
+import SideBar from '../components/SideBar';
 
-import "./Layout.css";
+import './Layout.css';
 
 class Layout extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class Layout extends React.Component {
   }
 
   handleClickOutside(event) {
-    let sideBarExpanded = this.props.NewsData.get("sideBarExpanded");
+    const sideBarExpanded = this.props.NewsData.get('sideBarExpanded');
     if (
       sideBarExpanded &&
       this.SideBarWrapperRef &&
@@ -62,7 +62,7 @@ class Layout extends React.Component {
 
 Layout.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  NewsData: PropTypes.object
+  NewsData: PropTypes.object,
 };
 
 export default connect(state => state)(Layout);

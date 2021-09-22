@@ -1,5 +1,35 @@
 {
     "files.exclude": {
         "**/src/**/*.css": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.fixAll.eslint": true
+    },
+    "workspace.isHidden": true,
+    "workbench.colorCustomizations": {
+        "terminal.background": "#002B36",
+        "terminal.foreground": "#93A1A1",
+        "terminalCursor.background": "#93A1A1",
+        "terminalCursor.foreground": "#93A1A1",
+        "terminal.ansiBlack": "#002B36",
+        "terminal.ansiBlue": "#268BD2",
+        "terminal.ansiBrightBlack": "#657B83",
+        "terminal.ansiBrightBlue": "#268BD2",
+        "terminal.ansiBrightCyan": "#2AA198",
+        "terminal.ansiBrightGreen": "#859900",
+        "terminal.ansiBrightMagenta": "#6C71C4",
+        "terminal.ansiBrightRed": "#DC322F",
+        "terminal.ansiBrightWhite": "#FDF6E3",
+        "terminal.ansiBrightYellow": "#B58900",
+        "terminal.ansiCyan": "#2AA198",
+        "terminal.ansiGreen": "#859900",
+        "terminal.ansiMagenta": "#6C71C4",
+        "terminal.ansiRed": "#DC322F",
+        "terminal.ansiWhite": "#93A1A1",
+        "terminal.ansiYellow": "#B58900",
+        "activityBar.background": "#4F1E1C",
+        "titleBar.activeBackground": "#6E2A27",
+        "titleBar.activeForeground": "#FEFCFC"
     }
 }

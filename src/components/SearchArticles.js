@@ -1,6 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+/* eslint-disable class-methods-use-this */
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 class SearchArticles extends React.Component {
   render() {
@@ -19,7 +20,7 @@ class SearchArticles extends React.Component {
 
 SearchArticles.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  NewsData: PropTypes.object.isRequired
+  NewsData: PropTypes.object.isRequired,
 };
 
 export default connect(state => state)(SearchArticles);

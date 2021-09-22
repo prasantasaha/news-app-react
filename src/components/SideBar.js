@@ -1,27 +1,28 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import { updateCategory, toggleSideBar } from "../state/NewsData";
+import { updateCategory, toggleSideBar } from '../state/NewsData';
 
-import "./SideBar.css";
+import './SideBar.css';
 
 class SideBar extends React.Component {
   updateCategory(category) {
     this.props.dispatch(updateCategory(category));
     this.props.dispatch(
-      toggleSideBar(!this.props.NewsData.get("sideBarExpanded"))
+      toggleSideBar(!this.props.NewsData.get('sideBarExpanded')),
     );
   }
+
   render() {
-    let sideBarClasses =
-      "menu sidebar " +
-      (this.props.NewsData.get("sideBarExpanded") ? "sidebar-expanded" : "");
+    const sideBarClasses = `menu sidebar ${
+      this.props.NewsData.get('sideBarExpanded') ? 'sidebar-expanded' : ''
+    }`;
 
     return (
       <aside className={sideBarClasses}>
         <p className="menu-label">
-          powered by{" "}
+          powered by{' '}
           <a href="//newsapi.org" target="_blank" rel="noopener noreferrer">
             NewsAPI.org
           </a>
@@ -33,32 +34,29 @@ class SideBar extends React.Component {
             <a
               onClick={this.updateCategory.bind(this, null)}
               className={
-                !this.props.NewsData.get("selectedCategory") ? "is-active" : ""
+                !this.props.NewsData.get('selectedCategory') ? 'is-active' : ''
               }
             >
               Top Headlines
             </a>
           </li>
-          {this.props.NewsData.get("categories").map(category => {
-            return (
-              <li key={category.name}>
-                <a
-                  onClick={this.updateCategory.bind(this, category)}
-                  className={
-                    this.props.NewsData.get("selectedCategory") &&
-                    this.props.NewsData.get("selectedCategory").name ===
-                      category.name
-                      ? "is-active"
-                      : ""
-                  }
-                >
-                  {category.displayName}
-                </a>
-              </li>
-            );
-          })}
+          {this.props.NewsData.get('categories').map(category => (
+            <li key={category.name}>
+              <a
+                onClick={this.updateCategory.bind(this, category)}
+                className={
+                  this.props.NewsData.get('selectedCategory') &&
+                  this.props.NewsData.get('selectedCategory').name ===
+                    category.name
+                    ? 'is-active'
+                    : ''
+                }
+              >
+                {category.displayName}
+              </a>
+            </li>
+          ))}
         </ul>
-       
       </aside>
     );
   }
@@ -66,7 +64,7 @@ class SideBar extends React.Component {
 
 SideBar.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  NewsData: PropTypes.object.isRequired
+  NewsData: PropTypes.object.isRequired,
 };
 
 export default connect(state => state)(SideBar);

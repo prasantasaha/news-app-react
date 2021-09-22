@@ -1,23 +1,24 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import { toggleSideBar } from "../state/NewsData";
+import { toggleSideBar } from '../state/NewsData';
 
-import logo from "../images/logo.png";
-import SearchArticles from "./SearchArticles";
+import logo from '../images/logo.png';
+import SearchArticles from './SearchArticles';
 
-import "./Navigation.css";
+import './Navigation.css';
 
 class Navigation extends React.Component {
   toggleSideBar() {
-    let sideBarExpanded = this.props.NewsData.get("sideBarExpanded");
+    const sideBarExpanded = this.props.NewsData.get('sideBarExpanded');
     this.props.dispatch(toggleSideBar(!sideBarExpanded));
   }
+
   render() {
-    let navToggleClass = this.props.NewsData.get("sideBarExpanded")
-      ? "active"
-      : "";
+    const navToggleClass = this.props.NewsData.get('sideBarExpanded')
+      ? 'active'
+      : '';
     return (
       <nav
         className="navbar is-fixed-top is-primary"
@@ -37,9 +38,9 @@ class Navigation extends React.Component {
           </div>
         </div>
         <div className="navbar-item category-title is-size-4">
-          {this.props.NewsData.get("selectedCategory")
-            ? this.props.NewsData.get("selectedCategory").displayName
-            : "Top Headlines"}
+          {this.props.NewsData.get('selectedCategory')
+            ? this.props.NewsData.get('selectedCategory').displayName
+            : 'Top Headlines'}
         </div>
 
         <div className="navbar-menu">
@@ -54,7 +55,7 @@ class Navigation extends React.Component {
 
 Navigation.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  NewsData: PropTypes.object.isRequired
+  NewsData: PropTypes.object.isRequired,
 };
 
 export default connect(state => state)(Navigation);
